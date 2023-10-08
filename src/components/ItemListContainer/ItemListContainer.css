@@ -1,0 +1,87 @@
+.products {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.products ul {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 90%; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.products li {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  border-radius: 4px;
+  background: #386802;
+  color: #fff;
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.products li:hover {
+  box-shadow: 0 0 10px #666;
+  transform: scale(1.05); 
+}
+
+.products img {
+  border-radius: 4px;
+  width: 100%;
+  aspect-ratio: 3/2;
+  display: block;
+  object-fit: cover;
+  background: #fff;
+}
+
+.products .price {
+  text-align: center;
+  margin-top: 1rem; 
+  font-size: 1.2rem; 
+}
+
+.products button {
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.6em 1.2em;
+  font-size: 1.3rem; 
+  font-weight: 500;
+  background-color: #c2e623;
+  color: #fff; 
+  border: none; 
+  transition: background-color 0.3s; 
+}
+
+.products button:hover {
+  background-color: #ff9900;
+}
+@media (max-width: 767px) {
+  .products ul {
+      grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Cambia a 2 columnas en pantallas pequeñas */
+      gap: 1rem; /* Reduce el espacio entre elementos */
+  }
+
+  .products li {
+      padding: 0.8rem; /* Ajusta el padding para un tamaño ligeramente más pequeño */
+  }
+
+  .products img {
+      aspect-ratio: 4/3; /* Cambia la relación de aspecto para un tamaño más pequeño */
+  }
+
+  .products .price {
+      font-size: 1rem; /* Reduce el tamaño de fuente del precio */
+  }
+
+  .products button {
+      font-size: 1rem; /* Reduce el tamaño de fuente del botón */
+      padding: 0.4em 0.8em; /* Ajusta el padding del botón */
+  }
+}
