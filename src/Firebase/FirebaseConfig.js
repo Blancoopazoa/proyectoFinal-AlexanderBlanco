@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB7yxLcR66vjejcm-8qtF9f4ZwozwsfFPs",
-  authDomain: "ecommerce-6899c.firebaseapp.com",
-  projectId: "ecommerce-6899c",
-  storageBucket: "ecommerce-6899c.appspot.com",
-  messagingSenderId: "478654489737",
-  appId: "1:478654489737:web:9fc9110f4a75b3f7c9d258"
+  apiKey: "AIzaSyDQ2a65wfCXIl9Jxwvp-imDrAKXUZVKO10",
+  authDomain: "tienda-dbf02.firebaseapp.com",
+  projectId: "tienda-dbf02",
+  storageBucket: "tienda-dbf02.appspot.com",
+  messagingSenderId: "561902434116",
+  appId: "1:561902434116:web:1c6430b3a157f449fe0911"
 };
 
 // Initialize Firebase

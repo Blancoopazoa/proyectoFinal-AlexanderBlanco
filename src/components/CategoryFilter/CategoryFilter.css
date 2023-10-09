@@ -2,9 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #111;
-  margin-top: 30px;
-  padding: 10px 20px;
+  margin-top: 5px;
+  padding: 10px 35px;
 }
 
 .container ul {
@@ -37,7 +36,7 @@
 }
 
 .category:hover {
-  color: #ff8000;
+  color: #000000;
   transform: scale(1.1);
 }
 

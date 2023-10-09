@@ -6,8 +6,6 @@ import { db } from "../../Firebase/FirebaseConfig";
 import { useParams, Link } from "react-router-dom";
 //material ui
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-//components
-import { CategoryFilter } from "../../components/CategoryFilter/CategoryFilter";
 
 export const CategoryPage = ({ addToCart }) => {
   const { category } = useParams();
@@ -36,7 +34,6 @@ export const CategoryPage = ({ addToCart }) => {
 
   return (
     <>
-      <CategoryFilter />
       <main className="products">
         <ul>
           {productData.map((product) => (

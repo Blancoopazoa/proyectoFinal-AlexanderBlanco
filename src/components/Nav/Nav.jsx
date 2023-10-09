@@ -1,8 +1,7 @@
 import './Nav.css'
-//components
 import { CartWidget } from '../CartWidget/CartWidget.jsx';
-//react router dom
 import { Link } from 'react-router-dom';
+import React from 'react'
 
 
 export function Nav( {cartItems}) {
@@ -10,22 +9,22 @@ export function Nav( {cartItems}) {
 
         <header className='header'>
             <div className='logo'>
-            <Link className='li' to='/'> <img src="/logo_ecommerce.jpg" alt="Logo-Ecommerce" /></Link>
+            <Link className='li' to='/'> <img src="/totoro.svg" alt="Logo-Ecommerce" /></Link>
             </div>
             <article className='carrito'>
                 <CartWidget cartItems={cartItems} />
             </article>
             <nav >
-                <ul className='nav-links'>
-                    <Link className='li' to='/'>Inicio</Link>
-                    <Link className='li' to='/contact'>Contacto</Link>
-                    <Link className='li' to='/about'>About</Link>
-                </ul>
+            <section className='container'>
+            <ul className='category-container'>
+            <Link to="/category/laptops"><li className='category'>Notebooks</li></Link>
+            <Link to="/category/smartphones"> <li className='category'>Celulares</li></Link>
+            <Link to="/category/fragrances"> <li className='category'>Perfumes</li></Link>
+            <Link to="/category/home-decoration"> <li className='category'>Hogar</li></Link>
+            </ul>
+            </section>
             </nav>
-
         </header>
-
-
 
     )
 }

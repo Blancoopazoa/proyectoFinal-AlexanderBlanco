@@ -57,7 +57,6 @@
 }
 
 .quantity {
-  background-color: #ff8000;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -73,7 +72,7 @@
 .action-circle {
   width: 36px;
   height: 36px;
-  background-color: #ff8000;
+  background-color: #5906a6;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -84,7 +83,7 @@
 }
 
 .action-circle:hover {
-  background-color: #ff9900;
+  background-color: #5906a6;
 }
 
 .delete-icon {
@@ -94,7 +93,7 @@
 }
 
 .delete-icon:hover {
-  color: #ff9900;
+  color: #000;
 }
 
 .total-compra {
@@ -108,7 +107,7 @@
 }
 
 .btn-compra {
-  background-color: #ff8000;
+  background-color: #5906a6;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -130,11 +129,11 @@
 
 .btn-compra:hover,
 .action-circle:hover {
-  background-color: #ff9900;
+  background-color: #000;
 }
 .btn-vaciar-compra {
-  background-color: #ff8000;
-  color: #000;
+  background-color: #5906a6;
+  color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
@@ -147,7 +146,7 @@
 }
 
 .btn-vaciar-compra:hover {
-  background-color: #ff9900;
+  background-color: #000;
 }
 
 /* carrito vacio */
@@ -179,7 +178,7 @@
   }
 
 .btn-tienda {
-  background-color: #ff8000;
+  background-color: #5906a6;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -191,7 +190,7 @@
 }
 
 .btn-tienda:hover {
-  background-color: #ff9900;
+  background-color: #000;
 }
 
 .cart-img-container {
@@ -205,7 +204,7 @@
 .cart-img {
   width: 80px; 
   height: 80px;
-  background-color: #ff8000; 
+  background-color: #5906a6; 
   border-radius: 50%;
   display: flex;
   align-items: center;

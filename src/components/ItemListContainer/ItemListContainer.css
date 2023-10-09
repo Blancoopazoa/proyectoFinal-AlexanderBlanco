@@ -21,7 +21,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
   border-radius: 4px;
-  background: #386802;
+  background: #6f6d6d;
   color: #fff;
   padding: 1rem;
   transition: transform 0.3s, box-shadow 0.3s; 
@@ -53,14 +53,14 @@
   padding: 0.6em 1.2em;
   font-size: 1.3rem; 
   font-weight: 500;
-  background-color: #c2e623;
+  background-color: #5906a6;
   color: #fff; 
   border: none; 
   transition: background-color 0.3s; 
 }
 
 .products button:hover {
-  background-color: #ff9900;
+  background-color: #000000;
 }
 @media (max-width: 767px) {
   .products ul {

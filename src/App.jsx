@@ -1,17 +1,11 @@
 import "./App.css";
 import { useState } from "react";
-//components
 import { Nav } from "./components/Nav/Nav";
 import { Footer } from "./components/Footer/Footer";
-//sweetalert
 import Swal from "sweetalert2";
-//react router dom
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-//pages
 import { ItemDetailPage } from "./pages/ItemDetailPage/ItemDetailPage";
-import { AboutPage } from "./pages/AboutPage/AboutPage";
 import { HomePage } from "./pages/HomePage/HomePage";
-import { ContactPage } from "./pages/ContactPage/ContactPage";
 import { CategoryPage } from "./pages/CategoryPage/CategoryPage";
 import { CartPage } from "./pages/CartPage/CartPage";
 
@@ -22,7 +16,6 @@ function App() {
     const existingItem = cartItems.find((item) => item.id === product.id);
 
     if (existingItem) {
-      // El producto ya está en el carrito, actualizar la cantidad
       Swal.fire({
         position: "top-end",
         icon: "info",
@@ -35,7 +28,6 @@ function App() {
       );
       setCartItems(updatedCartItems);
     } else {
-      // El producto no está en el carrito, agregarlo con cantidad inicial 1
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
       Swal.fire({
         position: "top-end",
@@ -46,7 +38,6 @@ function App() {
       });
     }
   };
-  //selector de cantidad
   const handleQuantityChange = (id, operation) => {
     const updatedCartItems = cartItems.map((item) => {
       if (item.id === id) {
@@ -68,8 +59,6 @@ function App() {
       <Nav cartItems={cartItems} />
       <Routes>
         <Route path="/" element={<HomePage addToCart={addToCart} />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
         <Route
           path="/item/:id"
           element={<ItemDetailPage addToCart={addToCart} />}
