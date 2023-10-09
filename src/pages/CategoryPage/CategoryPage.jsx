@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-//Firebase
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "../../Firebase/FirebaseConfig";
-//react router dom
 import { useParams, Link } from "react-router-dom";
-//material ui
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 export const CategoryPage = ({ addToCart }) => {

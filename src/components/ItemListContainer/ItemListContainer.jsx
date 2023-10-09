@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react'
-//material ui
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-//css
 import "./ItemListContainer.css"
-//firebase
 import { db } from '../../Firebase/FirebaseConfig'
 import { collection, query, getDocs, } from "firebase/firestore"
-//react router dom
 import { Link } from 'react-router-dom';
 
 
-//Cart
 export const ItemListContainer = ({addToCart}) => {
 
     const [products, setProducts] = useState([])

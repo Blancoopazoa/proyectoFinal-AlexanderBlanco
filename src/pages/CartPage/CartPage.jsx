@@ -1,20 +1,15 @@
 import { useState, useEffect } from "react";
 import "./CartPage.css";
-//firebase
 import { db } from "../../Firebase/FirebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
-//material ui
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-//sweet alert
 import Swal from "sweetalert2";
-//react router dom
 import { Link } from "react-router-dom";
 
 export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
-  //Formulario de compra
   const showContactForm = () => {
     Swal.fire({
       title: "Completa tus datos de contacto",
@@ -36,7 +31,7 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
         if (isFormValid(formData)) {
           onSubmitContactForm(formData);
         } else {
-          showContactForm(); // Mostrar nuevamente el diálogo si el formulario no es válido
+          showContactForm();
         }
       }
     });
@@ -60,11 +55,7 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
         telefono: formData.telefono,
         cartItems: cartItems,
       });
-
-      // Vaciar el carrito después de la compra
       setCartItems([]);
-
-      // Mostrar el mensaje de éxito con el número de compra
       Swal.fire({
         icon: "success",
         title: "¡Compra realizada!",
