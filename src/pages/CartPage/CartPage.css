@@ -212,6 +212,10 @@
   transition: .3s;
 }
 
+.input-error {
+  border: 2px solid red;
+}
+
 
 .cart-img svg {
   width: 60%; 

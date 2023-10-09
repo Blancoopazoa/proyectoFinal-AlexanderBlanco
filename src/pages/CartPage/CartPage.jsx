@@ -17,14 +17,40 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
         <form id="contact-form">
           <input id="swal-input1" class="swal2-input" placeholder="Nombre" name="name" required>
           <input id="swal-input2" class="swal2-input" placeholder="Correo electrónico" name="email" required>
-          <input id="swal-input3" class="swal2-input" placeholder="Teléfono" name="telefono" required>
+          <input id="swal-input3" class="swal2-input input-red" placeholder="Confirmar correo electrónico" name="emailConfirmation" required>
+          <input id="swal-input4" class="swal2-input" placeholder="Teléfono" name="telefono" required>
         </form>
       `,
       focusConfirm: false,
       showCancelButton: true,
       cancelButtonText: "Cancelar",
       confirmButtonText: "Confirmar compra",
-      preConfirm: () => {},
+      preConfirm: () => {
+        const formData = getFormData();
+        if (isFormValid(formData)) {
+          onSubmitContactForm(formData);
+        } else {
+          showErrorAlert("Por favor, completa todos los campos.");
+          return false;
+        }
+      },
+      inputAttributes: {
+      },
+      inputValidator: (result) => {
+        const form = Swal.getPopup().querySelector("#contact-form");
+        const formData = getFormData();
+        if (!isFormValid(formData)) {
+          form.querySelectorAll(".swal2-input").forEach((input) => {
+            if (!formData[input.name]) {
+              input.classList.add("input-error");
+            } else {
+              input.classList.remove("input-error");
+            }
+          });
+          return "Por favor, completa todos los campos.";
+        }
+        return undefined;
+      },
     }).then((result) => {
       if (result.isConfirmed) {
         const formData = getFormData();
@@ -36,6 +62,15 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
       }
     });
   };
+  
+
+  const showErrorAlert = (message) => {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: message,
+    });
+  };
 
   const getFormData = () => {
     const form = Swal.getPopup().querySelector("#contact-form");
@@ -44,23 +79,36 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
   };
 
   const isFormValid = (formData) => {
-    return formData.name && formData.email && formData.telefono;
+    return (
+      formData.name &&
+      formData.email &&
+      formData.telefono &&
+      formData.email === formData.emailConfirmation
+    );
   };
 
   const onSubmitContactForm = async (formData) => {
     try {
-      const docRef = await addDoc(collection(db, "purchasesCollection"), {
-        name: formData.name,
-        email: formData.email,
-        telefono: formData.telefono,
-        cartItems: cartItems,
-      });
-      setCartItems([]);
-      Swal.fire({
-        icon: "success",
-        title: "¡Compra realizada!",
-        text: `Gracias por tu compra. Tu número de compra es ${docRef.id}.`,
-      });
+      if (formData.email === formData.emailConfirmation) {
+        const docRef = await addDoc(collection(db, "purchasesCollection"), {
+          name: formData.name,
+          email: formData.email,
+          telefono: formData.telefono,
+          cartItems: cartItems,
+        });
+        setCartItems([]);
+        Swal.fire({
+          icon: "success",
+          title: "¡Compra realizada!",
+          text: `Gracias por tu compra. Tu número de compra es ${docRef.id}.`,
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error en el correo electrónico",
+          text: "Los correos electrónicos no coinciden. Por favor, inténtalo de nuevo.",
+        });
+      }
     } catch (error) {
       console.error("Error al enviar los datos:", error);
       Swal.fire({
@@ -72,7 +120,6 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
   };
 
   const [total, setTotal] = useState(0);
-  //Suma total del carrito
   useEffect(() => {
     const calculateTotal = () => {
       let sum = 0;
