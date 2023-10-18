@@ -1,0 +1,145 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #6f6d6d;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(15, 250, 179, 0.2);
+}
+
+.product h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.product img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.product p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  padding: 20px;
+}
+
+.product button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.6em 1.2em;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  background-color: #5906a6;
+  color: #fff;
+  width: 200px;
+}
+
+.product button:hover {
+  background-color: #000;
+}
+
+.volver {
+  padding: 0px 670px 0px 0px;
+}
+
+.action-circle-test {
+  background-color: #5906a6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-test {
+  background-color: #5906a6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-circle-test {
+    font-size: 14px;
+    padding: 4px 8px;
+}
+
+.quantity-test {
+  width: 24px;
+  height: 24px;
+  font-weight: bold;
+}
+
+.quantity-test {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.action-circle-test {
+  width: 24px;
+  height: 24px;
+  font-size: 12px; 
+}
+
+.action-circle-test:hover {
+  background-color: #5906a6;
+}
+
+.action-circle-test:hover {
+  background-color: #000;
+}
+
+.cartGo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0px 0px 670px;
+}
+
+.cartGo a {
+  text-decoration: none;
+}
+
+.cartGo button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.6em 1.2em;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  background-color: #5906a6;
+  color: #fff;
+  width: 200px;
+}
+
+.cartGo button:hover {
+  background-color: #000;
+}

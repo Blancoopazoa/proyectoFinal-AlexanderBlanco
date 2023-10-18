@@ -1,70 +1,43 @@
-# ProyectoFinal-AlexanderBlanco
+# **Proyecto Final ReactJS CoderHouse 2023** 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es un proyecto privado que consta de una aplicación web desarrollada en React utilizando Vite como el entorno de desarrollo. Esta aplicación incluye funcionalidades de enrutamiento y utiliza Firebase para la gestión de datos en tiempo real.
 
-## Available Scripts
+### **Diego Muro**
+### **Contacto:**
+[![LinkedId](https://img.shields.io/badge/LinkedIn-informational?style=for-the-badge&logo=linkedin&logoColor=fff&color=23272d)](https://www.linkedin.com/in/alexander-blanco-opazo-911041193/)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-informational?style=for-the-badge&logo=GitHub&logoColor=fff&color=23272d)](https://github.com/Blancoopazoa)
 
-In the project directory, you can run:
+## Scripts
 
-### `npm start`
+Puedes ejecutar los siguientes scripts en este proyecto:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `npm run dev`: Inicia un servidor de desarrollo Vite.
+- `npm run build`: Compila la aplicación para producción.
+- `npm run lint`: Ejecuta ESLint para analizar y formatear el código fuente.
+- `npm run preview`: Muestra una vista previa de la aplicación utilizando Vite.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Dependencias
 
-### `npm test`
+Este proyecto depende de las siguientes bibliotecas y paquetes:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [@emotion/react](https://www.npmjs.com/package/@emotion/react) y [@emotion/styled](https://www.npmjs.com/package/@emotion/styled) para el estilo y la gestión de estilos en React.
+- [@mui/icons-material](https://www.npmjs.com/package/@mui/icons-material) y [@mui/material](https://www.npmjs.com/package/@mui/material) para componentes de Material-UI.
+- [Firebase](https://www.npmjs.com/package/firebase) para la gestión de datos en tiempo real y autenticación.
+- [React](https://www.npmjs.com/package/react) y [React DOM](https://www.npmjs.com/package/react-dom) como la biblioteca principal de desarrollo web.
+- [React Router Dom](https://www.npmjs.com/package/react-router-dom) para el enrutamiento en la aplicación.
+- [SweetAlert2](https://www.npmjs.com/package/sweetalert2) para mostrar alertas y notificaciones personalizadas.
 
-### `npm run build`
+## Dependencias de Desarrollo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Las dependencias de desarrollo incluyen las siguientes bibliotecas y paquetes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [@types/react](https://www.npmjs.com/package/@types/react) y [@types/react-dom](https://www.npmjs.com/package/@types/react-dom) para proporcionar tipos TypeScript para React y React DOM.
+- [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react) para la integración de React en el entorno Vite.
+- [ESLint](https://www.npmjs.com/package/eslint), [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react), [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) y [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh) para el análisis de código y las reglas de estilo.
+- [Vite](https://www.npmjs.com/package/vite) como el entorno de desarrollo rápido.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Nota
 
-### `npm run eject`
+Asegúrate de mantener actualizadas tus dependencias y bibliotecas para garantizar la seguridad y la compatibilidad con las últimas versiones de las mismas.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+¡Disfruta trabajando en tu proyecto!

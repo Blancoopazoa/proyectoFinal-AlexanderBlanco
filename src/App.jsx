@@ -4,7 +4,7 @@ import { Nav } from "./components/Nav/Nav";
 import { Footer } from "./components/Footer/Footer";
 import Swal from "sweetalert2";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ItemDetailPage } from "./pages/ItemDetailPage/ItemDetailPage";
+import { ItemDetailPage } from "./pages/ItemDetail/ItemDetail";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { CategoryPage } from "./pages/CategoryPage/CategoryPage";
 import { CartPage } from "./pages/CartPage/CartPage";
@@ -69,7 +69,7 @@ function App() {
         />
         <Route
           path="/category/:category/item/:id"
-          element={<ItemDetailPage />}
+          element={<ItemDetailPage addToCart={addToCart}/>}
         />
         <Route
           path="/cart"
@@ -81,6 +81,7 @@ function App() {
             />
           }
         />
+        <Route path='*' element={<h1>404 NOT FOUND</h1>} />
       </Routes>
       <Footer />
     </Router>
