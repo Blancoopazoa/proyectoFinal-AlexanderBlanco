@@ -2,7 +2,7 @@
 
 Este es un proyecto privado que consta de una aplicación web desarrollada en React utilizando Vite como el entorno de desarrollo. Esta aplicación incluye funcionalidades de enrutamiento y utiliza Firebase para la gestión de datos en tiempo real.
 
-### **Diego Muro**
+### **Alexander Blanco**
 ### **Contacto:**
 [![LinkedId](https://img.shields.io/badge/LinkedIn-informational?style=for-the-badge&logo=linkedin&logoColor=fff&color=23272d)](https://www.linkedin.com/in/alexander-blanco-opazo-911041193/)
 [![GitHub Profile](https://img.shields.io/badge/GitHub-informational?style=for-the-badge&logo=GitHub&logoColor=fff&color=23272d)](https://github.com/Blancoopazoa)
