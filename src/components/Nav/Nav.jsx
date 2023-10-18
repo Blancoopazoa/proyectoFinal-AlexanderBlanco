@@ -17,6 +17,7 @@ export function Nav( {cartItems}) {
             <nav >
             <section className='container'>
             <ul className='category-container'>
+            <Link to="/"><li className='category'>Inicio</li></Link>
             <Link to="/category/laptops"><li className='category'>Notebooks</li></Link>
             <Link to="/category/smartphones"> <li className='category'>Celulares</li></Link>
             <Link to="/category/fragrances"> <li className='category'>Perfumes</li></Link>

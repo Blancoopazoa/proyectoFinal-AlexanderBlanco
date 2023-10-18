@@ -1,6 +1,7 @@
 # **Proyecto Final ReactJS CoderHouse 2023** 
 
 A continuacion una descripcion del proyecto final del curso de ReactJS de CoderHouse que consta de una aplicación web desarrollada en React utilizando Vite como el entorno de desarrollo. Esta aplicación incluye funcionalidades de enrutamiento y utiliza Firebase para la gestión de datos en tiempo real.
+Tambien contiene mui/material, mui/icons-material para gestionar diseño y ocupar icono, ocupo estas biblioteca por que las he utilizados anteriormente y me siento comodo.
 
 ### **Alexander Blanco**
 ### **Contacto:**

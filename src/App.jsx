@@ -59,28 +59,10 @@ function App() {
       <Nav cartItems={cartItems} />
       <Routes>
         <Route path="/" element={<HomePage addToCart={addToCart} />} />
-        <Route
-          path="/item/:id"
-          element={<ItemDetailPage addToCart={addToCart} />}
-        />
-        <Route
-          path="/category/:category"
-          element={<CategoryPage addToCart={addToCart} />}
-        />
-        <Route
-          path="/category/:category/item/:id"
-          element={<ItemDetailPage addToCart={addToCart}/>}
-        />
-        <Route
-          path="/cart"
-          element={
-            <CartPage
-              cartItems={cartItems}
-              setCartItems={setCartItems}
-              handleQuantityChange={handleQuantityChange}
-            />
-          }
-        />
+        <Route path="/item/:id" element={<ItemDetailPage addToCart={addToCart} />}/>
+        <Route path="/category/:category" element={<CategoryPage addToCart={addToCart} />}/>
+        <Route path="/category/:category/item/:id" element={<ItemDetailPage addToCart={addToCart}/>}/>
+        <Route path="/cart" element={<CartPage cartItems={cartItems} setCartItems={setCartItems} handleQuantityChange={handleQuantityChange}/>}/>
         <Route path='*' element={<h1>404 NOT FOUND</h1>} />
       </Routes>
       <Footer />
