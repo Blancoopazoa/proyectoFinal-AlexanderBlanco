@@ -10,21 +10,26 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
+  const [formErrors, setFormErrors] = useState({});
   const showContactForm = () => {
     Swal.fire({
       title: "Completa tus datos de contacto",
       html: `
-        <form id="contact-form">
-          <input id="swal-input1" class="swal2-input" placeholder="Nombre" name="name" required>
-          <input id="swal-input2" class="swal2-input" placeholder="Correo electrónico" name="email" required>
-          <input id="swal-input3" class="swal2-input input-red" placeholder="Confirmar correo electrónico" name="emailConfirmation" required>
-          <input id="swal-input4" class="swal2-input" placeholder="Teléfono" name="telefono" required>
-        </form>
-      `,
+      <form id="contact-form">
+        <input id="swal-input1" class="swal2-input contact-input" placeholder="Nombre" name="name" required>
+        <span class="error-message">${formErrors.name || ''}</span>
+        <input id="swal-input2" class="swal2-input contact-input" placeholder="Correo electrónico" name="email" required>
+        <span class="error-message">${formErrors.email || ''}</span>
+        <input id="swal-input3" class="swal2-input contact-input input-red" placeholder="Confirmar correo electrónico" name="emailConfirmation" required>
+        <span class="error-message">${formErrors.emailConfirmation || ''}</span>
+        <input id="swal-input4" class="swal2-input contact-input" placeholder="Teléfono" name="telefono" required>
+        <span class="error-message">${formErrors.telefono || ''}</span>
+      </form>
+    `,
       focusConfirm: false,
       showCancelButton: true,
       cancelButtonText: "Cancelar",
-      confirmButtonText: "Confirmar compra",
+      confirmButtonText: "Enviar compra",
       preConfirm: () => {
         const formData = getFormData();
         if (isFormValid(formData)) {
@@ -34,32 +39,6 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
           return false;
         }
       },
-      inputAttributes: {
-      },
-      inputValidator: (result) => {
-        const form = Swal.getPopup().querySelector("#contact-form");
-        const formData = getFormData();
-        if (!isFormValid(formData)) {
-          form.querySelectorAll(".swal2-input").forEach((input) => {
-            if (!formData[input.name]) {
-              input.classList.add("input-error");
-            } else {
-              input.classList.remove("input-error");
-            }
-          });
-          return "Por favor, completa todos los campos.";
-        }
-        return undefined;
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        const formData = getFormData();
-        if (isFormValid(formData)) {
-          onSubmitContactForm(formData);
-        } else {
-          showContactForm();
-        }
-      }
     });
   };
   
@@ -79,12 +58,22 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
   };
 
   const isFormValid = (formData) => {
-    return (
-      formData.name &&
-      formData.email &&
-      formData.telefono &&
-      formData.email === formData.emailConfirmation
-    );
+    const errors = {};
+    if (!formData.name) {
+      errors.name = "El nombre es obligatorio.";
+    }
+    if (!formData.email) {
+      errors.email = "El correo electrónico es obligatorio.";
+    }
+    if (!formData.telefono) {
+      errors.telefono = "El teléfono es obligatorio.";
+    }
+    if (formData.email !== formData.emailConfirmation) {
+      errors.emailConfirmation = "Los correos electrónicos no coinciden.";
+    }
+  
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const onSubmitContactForm = async (formData) => {
@@ -101,6 +90,10 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
           icon: "success",
           title: "¡Compra realizada!",
           text: `Gracias por tu compra. Tu número de compra es ${docRef.id}.`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            showContactForm(); // Vuelve a mostrar el formulario
+          }
         });
       } else {
         Swal.fire({
@@ -118,6 +111,7 @@ export const CartPage = ({ cartItems, handleQuantityChange, setCartItems }) => {
       });
     }
   };
+  
 
   const [total, setTotal] = useState(0);
   useEffect(() => {

@@ -75,11 +75,11 @@ return (
           <div className="description">
             <p>{product.description}</p>
           </div>
-          <div className="action-circle-test">
+          {/* <div className="action-circle-test">
             <button onClick={decreaseQuantity}>-</button>
             <span className="quantity-test">{quantity}</span>
             <button onClick={increaseQuantity}>+</button>
-          </div>
+          </div> */}
           <button onClick={handleAddToCart}>
             <AddShoppingCartIcon />
           </button>

@@ -1,3 +1,19 @@
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block; /* Asegúrate de que los mensajes de error estén en un bloque */
+}
+
+.contact-input {
+  margin-bottom: 10px; /* Espaciado entre campos de entrada */
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .cart {
   margin-top: 30px;
   background-color: #333;
